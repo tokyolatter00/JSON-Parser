@@ -19,7 +19,7 @@ Read JSON Object from a string
 #include "src/include/json-parser.h"
 
 int main(void) {
-   	// Initialize
+	// Initialize
 
 	const char* source = "{\"name\": \"John\", \"age\": 20}";
 	JsonHandler* handler = JsonCreateHandler();
@@ -27,6 +27,11 @@ int main(void) {
 	// Load Json Object
 
 	JsonExpr* expr = JsonLoadString(handler, source);
+
+	// Add Some Values
+
+	JsonSetString(expr, "job", "Librarian");
+	JsonSetInt(expr, "hours-per-week", 25);
 
 	// Check For Errors
 
