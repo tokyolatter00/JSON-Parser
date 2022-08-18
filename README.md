@@ -9,9 +9,9 @@ This is a JSON parser written in C, this can be used in C/C++ projects and has l
 - Read a JSON Object from a file
 - Write a JSON Object to a string
 - Write a JSON Object to a file
+- Clean and efficient memory management
 
 ### Examples
-
 Read JSON Object from a string
 
 ```c
