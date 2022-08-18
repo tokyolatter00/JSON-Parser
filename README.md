@@ -15,8 +15,11 @@ This is a JSON parser written in C, this can be used in C/C++ projects and has l
 Read JSON Object from a string
 
 ```c
+#include <stdio.h>
+#include "src/include/json-parser.h"
+
 int main(void) {
-    	// Initialize
+	// Initialize
 
 	const char* source = "{\"name\": \"John\", \"age\": 20}";
 	JsonHandler* handler = JsonCreateHandler();
@@ -32,7 +35,16 @@ int main(void) {
 		JsonDeleteHandler(handler);
 		return;
 	}
-  
-  	// Do stuff here
+
+	// Print to Console
+
+	char* str;
+	JsonDumpString(expr, &str);
+	printf("--> %s\n", str);
+
+	// Memory Cleanup
+
+	JsonDeleteHandler(handler);
+	JsonDeleteExpr(expr);
 }
 ```
