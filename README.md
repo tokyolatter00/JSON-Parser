@@ -53,3 +53,6 @@ int main(void) {
 	JsonDeleteExpr(expr);
 }
 ```
+
+For more examples you can take a look at `examples/example-1.c`, this C file contains some functions which contain examples of different ways to use and interact with this library
+
