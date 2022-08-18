@@ -54,5 +54,6 @@ int main(void) {
 }
 ```
 
+The above code prints out `--> {"name": "John", "age": 20, "job": "Librarian", "hours-per-week": 25}` to the screen, and also exits with 0 memory leaks as the correct functions were used to delete objects that were allocated.
 For more examples you can take a look at `examples/example-1.c`, this C file contains some functions which contain examples of different ways to use and interact with this library
 
