@@ -10,4 +10,6 @@ This is a JSON parser written in C, this can be used in C/C++ projects and has l
 - Write a JSON Object to a string
 - Write a JSON Object to a file
 
+### Examples
 
+# a
