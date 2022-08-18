@@ -14,7 +14,7 @@ This is a JSON parser written in C, this can be used in C/C++ projects and has l
 
 Read JSON Object from a string
 
-```
+```c
 int main(void) {
     	// Initialize
 
