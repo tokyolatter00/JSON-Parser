@@ -97,5 +97,14 @@ int main(void) {
 // with a size of almost 4MB to show this JSON parser is able to read in very large amounts of JSON data.
 ```
 
+Write Json Object to File
+
+```
+
+
+// The above code creates the file `examples/output.json` and writes '{"animal-name": "Polar Bear", "average-weight": "775 lbs to 1500 lbs",
+// "average-height": "6 feet to 8 feet", "has-// claws": true}' to it, which is what we expected
+```
+
 The examples above all exit with 0 memory leaks as the correct functions were used to delete objects that were allocated. For more examples you can take a look at `examples/example-1.c`, this C file contains some functions which contain examples of different ways to use and interact with this library
 
