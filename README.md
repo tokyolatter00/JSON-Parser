@@ -51,6 +51,7 @@ int main(void) {
 
 	JsonDeleteHandler(handler);
 	JsonDeleteExpr(expr);
+	free(str);
 }
 ```
 
