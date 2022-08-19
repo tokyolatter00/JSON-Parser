@@ -55,6 +55,43 @@ int main(void) {
 }
 ```
 
-The above code prints out `--> {"name": "John", "age": 20, "job": "Librarian", "hours-per-week": 25}` to the screen, and also exits with 0 memory leaks as the correct functions were used to delete objects that were allocated.
-For more examples you can take a look at `examples/example-1.c`, this C file contains some functions which contain examples of different ways to use and interact with this library
+The above code prints out `--> {"name": "John", "age": 20, "job": "Librarian", "hours-per-week": 25}` to the screen, which is what we expected
+
+Read JSON Object from a file
+
+```c
+#include <stdio.h>
+#include "src/include/json-parser.h"
+
+int main(void) {
+	// Initialize
+
+	const char* filepath = "exaamples/example.json";
+	JsonHandler* handler = JsonCreateHandler();
+
+	// Load Json Object
+
+	JsonExpr* expr = JsonLoadFile(handler, filepath);
+
+	if (handler->Error->Exists) {
+		printf("Error: %s\n", handler->Error->DebugStr);
+		JsonDeleteHandler(handler);
+		return;
+	}
+
+	// Print to Console
+
+	char* str;
+	JsonDumpString(expr, &str);
+	printf("--> %s\n", str);
+
+	// Memory Cleanup
+
+	JsonDeleteHandler(handler);
+	JsonDeleteExpr(expr);
+	free(str);
+}
+```
+
+The examples above all exit with 0 memory leaks as the correct functions were used to delete objects that were allocated. For more examples you can take a look at `examples/example-1.c`, this C file contains some functions which contain examples of different ways to use and interact with this library
 
