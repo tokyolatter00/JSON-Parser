@@ -100,7 +100,39 @@ int main(void) {
 Write Json Object to File
 
 ```
+#include <stdio.h>
+#include "src/include/json-parser.h"
 
+int main(void) {
+	// Initialize
+
+	const char* filepath = "examples/output.json";
+	JsonHandler* handler = JsonCreateHandler();
+	JsonExpr* expr = JsonCreateExpr();
+
+	// Attach Values
+
+	JsonSetString(expr, "animal-name", "Polar Bear");
+	JsonSetString(expr, "average-weight", "775 lbs to 1500 lbs");
+	JsonSetString(expr, "average-height", "6 feet to 8 feet");
+
+	// Save to File
+
+	JsonDumpFile(handler, expr, filepath);
+
+	if (handler->Error->Exists) {
+		printf("Error: %s\n", handler->Error->DebugStr);
+		JsonDeleteHandler(handler);
+		return;
+	}
+
+	printf("Successfully saved to %s\n", filepath);
+
+	// Memory Cleanup
+
+	JsonDeleteHandler(handler);
+	JsonDeleteExpr(expr);
+}
 
 // The above code creates the file `examples/output.json` and writes:
 // '{"animal-name": "Polar Bear", "average-weight": "775 lbs to 1500 lbs", "average-height": "6 feet to 8 feet"}'
