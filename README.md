@@ -53,9 +53,9 @@ int main(void) {
 	JsonDeleteExpr(expr);
 	free(str);
 }
-```
 
-The above code prints out `--> {"name": "John", "age": 20, "job": "Librarian", "hours-per-week": 25}` to the screen, which is what we expected
+The above code prints out "--> {"name": "John", "age": 20, "job": "Librarian", "hours-per-week": 25}" to the screen, which is what we expected
+```
 
 Read JSON Object from a file
 
@@ -66,7 +66,7 @@ Read JSON Object from a file
 int main(void) {
 	// Initialize
 
-	const char* filepath = "exaamples/example.json";
+	const char* filepath = "examples/example.json";
 	JsonHandler* handler = JsonCreateHandler();
 
 	// Load Json Object
@@ -91,6 +91,8 @@ int main(void) {
 	JsonDeleteExpr(expr);
 	free(str);
 }
+
+The above code prints out the contents of the file `examples/example.json`. This is a JSON file which has randomised data, with a size of almost 4MB to show this JSON parser is able to read in very large amounts of JSON data.
 ```
 
 The examples above all exit with 0 memory leaks as the correct functions were used to delete objects that were allocated. For more examples you can take a look at `examples/example-1.c`, this C file contains some functions which contain examples of different ways to use and interact with this library
