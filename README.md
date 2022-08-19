@@ -99,7 +99,7 @@ int main(void) {
 
 Write Json Object to File
 
-```
+```c
 #include <stdio.h>
 #include "src/include/json-parser.h"
 
