@@ -103,7 +103,7 @@ Write Json Object to File
 
 
 // The above code creates the file `examples/output.json` and writes:
-// '{"animal-name": "Polar Bear", "average-weight": "775 lbs to 1500 lbs", "average-height": "6 feet to 8 feet", "has-// claws": true}'
+// '{"animal-name": "Polar Bear", "average-weight": "775 lbs to 1500 lbs", "average-height": "6 feet to 8 feet"}'
 // to it, which is what we expected
 ```
 
