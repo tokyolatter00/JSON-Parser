@@ -54,7 +54,7 @@ int main(void) {
 	free(str);
 }
 
-// The above code prints out "--> {"name": "John", "age": 20, "job": "Librarian", "hours-per-week": 25}" to the screen,
+// The above code prints out '--> {"name": "John", "age": 20, "job": "Librarian", "hours-per-week": 25}' to the screen,
 // which is what we expected
 ```
 
