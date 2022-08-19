@@ -18,6 +18,9 @@
 
 	> SkipWhitespace()
 	Keep advancing until a character which is not a whitespace is found
+
+	> AdvanceWith()
+	Create a token from the current lexer's char and call Advance()
 */
 
 static void Advance(Lexer* lexer) {
